@@ -13,7 +13,9 @@ class KonsumenController extends Controller
      */
     public function index()
     {
-        return view('konsumen/index');
+        $konsumen = User::role('konsumen')->get();
+
+        return view('konsumen/index', compact('konsumen'));
     }
 
     /**
