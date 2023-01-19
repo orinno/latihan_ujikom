@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KonsumenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/index', function(){
+    return view('index');
+});
+
+Route::get('/dashboard', function(){
+    return view('dashboard.index');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/konsumen', [KonsumenController::class, 'index'])->name('konsumen.index');
